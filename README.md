@@ -1,7 +1,7 @@
 
 # ADP GlobalView paycheck analyzer
 
-Simple tool to download your PayCheck into a flat CSV file so you can use it on a Pivot Table
+Simple tool to download your PayCheck into a flat CSV file so you can use it on a [Pivot Table](https://docs.google.com/spreadsheets/d/1-lHAEzu1DCGlIwAyJAPzzuWKM7NlHLbMs2rqguX59Bk/edit#gid=1263783736)
 
 ### Setup
 
@@ -29,3 +29,13 @@ jq -f lib/jq/overview.jq overview.json | json2csv --output data/overview.csv
 ```
 
 ![Screenshot of network console](./screenshot.png)
+
+6. Create a copy of https://docs.google.com/spreadsheets/d/1-lHAEzu1DCGlIwAyJAPzzuWKM7NlHLbMs2rqguX59Bk/edit#gid=1150223406
+
+7. Upload `overview.csv` into the "overview" tab. Be sure to choose "Replace current sheet"
+
+![Screenshot of import instructions](./screenshot-import.png)
+
+8. Pivot Table
+
+![Screenshot of pivot table](./screenshot-pivot.png)
