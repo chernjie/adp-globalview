@@ -20,14 +20,15 @@ use() {
 
 main() {
     mkdir -p data
-    jq -f lib/jq/overview.jq overview.json | json2csv --output data/overview.csv
+    jq -f lib/jq/overview.jq overview.json | npx json2csv --output data/overview.csv
 }
 
 case $1 in
 
   setup)
-    brew install jq node
-    npm install --global json2csv
+    brew install jq nvm
+    nvm install 16
+    npm install --global json2csv hashable-cli
   ;;
 
   *)

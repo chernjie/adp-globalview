@@ -12,8 +12,9 @@ git submodule add git@github.com:chernjie/adp-globalview.git lib
 ```
 3. install dependencies
 ```shell
-brew install jq node
-npm install --global json2csv
+brew install jq nvm
+nvm install 16
+npm install --global json2csv hashable-cli
 ```
 
 ## Usage
@@ -25,17 +26,17 @@ npm install --global json2csv
 5. Flatten overview.json into `data/overview.csv`
 ```shell
 mkdir -p data
-jq -f lib/jq/overview.jq overview.json | json2csv --output data/overview.csv
+jq -f lib/jq/overview.jq overview.json | npx json2csv --output data/overview.csv
 ```
 
-![Screenshot of network console](./screenshot.png)
+![Screenshot of network console](./images/screenshot.png)
 
 6. Create a copy of https://docs.google.com/spreadsheets/d/1-lHAEzu1DCGlIwAyJAPzzuWKM7NlHLbMs2rqguX59Bk/edit#gid=1150223406
 
 7. Upload `overview.csv` into the "overview" tab. Be sure to choose "Replace current sheet"
 
-![Screenshot of import instructions](./screenshot-import.png)
+![Screenshot of import instructions](./images/screenshot-import.png)
 
 8. Pivot Table
 
-![Screenshot of pivot table](./screenshot-pivot.png)
+![Screenshot of pivot table](./images/screenshot-pivot.png)
