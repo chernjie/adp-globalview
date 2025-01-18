@@ -25,6 +25,12 @@ main() {
 
 case $1 in
 
+  merge)
+    cat ./overview-*.json |
+      jq -sf ./lib/jq/select-overview-with-buckets.jq |
+      npx hashable-cli --sort-object > ./overview.json
+    ;;
+
   setup)
     brew install jq nvm
     nvm install 16

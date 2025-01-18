@@ -8,7 +8,7 @@ Simple tool to download your PayCheck into a flat CSV file so you can use it on 
 1. create a new git directory `git init`
 2. include this lib as submodule
 ```shell
-git submodule add git@github.com:chernjie/adp-globalview.git lib
+git submodule add https://github.com/chernjie/adp-globalview.git lib
 ```
 3. install dependencies
 ```shell
@@ -23,7 +23,11 @@ npm install --global json2csv hashable-cli
 2. Open "network" console and search for "overview"
 3. Right click on "overview" > "Copy" > "Copy response"
 4. Save the response into a file "overview.json"
-5. Flatten overview.json into `data/overview.csv`
+5. If necessary, you may need to download "overview.json" year by year and merge them. Example command:
+```shell
+./lib/bin/paycheck.sh merge
+```
+6. Flatten overview.json into `data/overview.csv`
 ```shell
 mkdir -p data
 jq -f lib/jq/overview.jq overview.json | npx json2csv --output data/overview.csv
